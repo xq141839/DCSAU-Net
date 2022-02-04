@@ -1,7 +1,7 @@
 # DCSAU-Net: A Deeper and More Compact Split-Attention U-Net for Medical Image Segmentation
 By [Qing Xu](https://www.linkedin.com/in/%E5%8D%BF-%E5%BE%90-6556a9181/), [Wenting Duan](https://staff.lincoln.ac.uk/wduan) and Na He
 ## Dataset
-The data tree is as follows:
+To apply the model on a custom dataset, the data tree should be constructed as:
 ``` 
     ├── data
           ├── images
