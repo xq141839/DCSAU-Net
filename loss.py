@@ -17,7 +17,7 @@ class DiceLoss_multiple(nn.Module):
         intersection = (inputs * targets).sum()                            
         dice = (2.*intersection + smooth)/(inputs.sum() + targets.sum() + smooth)
         
-        return -torch.log(dice)
+        return 1-dice
 
     def forward(self, ipts, gt):
         
@@ -65,7 +65,7 @@ class DiceLoss_binary(nn.Module):
         intersection = (inputs * targets).sum()                            
         dice = (2.*intersection + smooth)/(inputs.sum() + targets.sum() + smooth)  
         
-        return -torch.log(dice)
+        return 1-dice
 
 class IoU_binary(nn.Module):
     def __init__(self, weight=None, size_average=True):
