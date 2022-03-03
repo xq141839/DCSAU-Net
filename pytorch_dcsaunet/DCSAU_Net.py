@@ -118,5 +118,5 @@ class Model(nn.Module):
         
         x18 = self.out_conv(x17)
         
-        x19 = torch.sigmoid(x18)
+        #x19 = torch.sigmoid(x18)
         return x19
