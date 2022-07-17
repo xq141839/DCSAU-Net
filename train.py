@@ -134,7 +134,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     os.makedirs(f'save_models/',exist_ok=True)
-    fold = 0
+    
 
     df = pd.read_csv(args.csvfile)
     gkf  = GroupKFold(n_splits = 5)
@@ -142,6 +142,7 @@ if __name__ == '__main__':
     for fold, (train_idx, val_idx) in enumerate(gkf.split(df, groups = df.image_id.tolist())):
         df.loc[val_idx, 'fold'] = fold
     
+    fold = 0
     val_files = list(df[df.fold==fold].image_id)
     train_files = list(df[df.fold!=fold].image_id)
     
