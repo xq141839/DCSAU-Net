@@ -1,5 +1,6 @@
 # DCSAU-Net: A Deeper and More Compact Split-Attention U-Net for Medical Image Segmentation
-
+## News
+The DCSAU-Net model has been optimised. 
 ## Requirements
 1. pytorch==1.10.0
 2. pytorch-lightning==1.1.0
