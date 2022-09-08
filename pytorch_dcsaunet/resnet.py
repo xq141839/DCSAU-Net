@@ -166,13 +166,13 @@ class ResNet(nn.Module):
                                            dilation=1, norm_layer=norm_layer,
                                            dropblock_prob=dropblock_prob)
         
-        self.layer4 = self._make_layer(block, ConvFea[2], layers[2], stride=1,
+        self.layer4 = self._make_layer(block, ConvFea[2], layers[3], stride=1,
                                            dilation=1, norm_layer=norm_layer,
                                            dropblock_prob=dropblock_prob)
            
             
         self.layer5 = self._make_layer(block, ConvFea[1], layers[0], stride=1,
-                                            dilation=2, norm_layer=norm_layer,
+                                            dilation=1, norm_layer=norm_layer,
                                             dropblock_prob=dropblock_prob,inchannel=1024)
         self.layer6 = self._make_layer(block, ConvFea[0], layers[1], stride=1,
                                             dilation=1, norm_layer=norm_layer,
