@@ -1,6 +1,7 @@
 # DCSAU-Net: A Deeper and More Compact Split-Attention U-Net for Medical Image Segmentation
 ## News
 2022.08.25: The DCSAU-Net model has been optimised. The paper will be updated later.
+2022.09.27:The updated preprint has been available at [Arxiv](https://arxiv.org/pdf/2202.00972v2.pdf). 
 ## Requirements
 1. pytorch==1.10.0
 2. pytorch-lightning==1.1.0
