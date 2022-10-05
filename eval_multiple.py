@@ -45,7 +45,7 @@ if __name__ == '__main__':
     recall_score = []
     f1_score = []
     dice_score = []
-    
+    time_cost = []
     since = time.time()
     
     for image_id in test_files:
@@ -59,7 +59,12 @@ if __name__ == '__main__':
             img = Variable(torch.unsqueeze(img, dim=0).float(), requires_grad=False).cuda()           
             mask = Variable(torch.unsqueeze(mask, dim=0).float(), requires_grad=False).cuda()
             
+            torch.cuda.synchronize()
+            start = time.time()
             pred = model(img)
+            torch.cuda.synchronize()
+            end = time.time()
+            time_cost.append(end-start)
             
             ts_sfx = sfx(pred)
             pred = sfx(pred)
@@ -123,6 +128,7 @@ if __name__ == '__main__':
     
     print('Evaluation complete in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
+    print('FPS: {:.2f}'.format(1.0/(sum(time_cost)/len(time_cost))))
     print('mean IoU:',np.mean(iou_score),np.std(iou_score))
     print('mean accuracy:',np.mean(acc_score),np.std(acc_score))
     print('mean precsion:',np.mean(pre_score),np.std(pre_score))
