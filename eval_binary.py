@@ -101,7 +101,7 @@ if __name__ == '__main__':
             pred = model(img)
             torch.cuda.synchronize()
             end = time.time()
-            res.append(end-start)
+            time_cost.append(end-start)
 
             pred = torch.sigmoid(pred)
 
