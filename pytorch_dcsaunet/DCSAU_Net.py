@@ -5,22 +5,6 @@ from pytorch_dcsaunet.encoder import CSA
 
 csa_block = CSA()
 
-class DownAndUp(nn.Module):
-    def __init__(self,in_channels, out_channels):
-       super(DownAndUp, self).__init__()
-       temp = out_channels
-       self.conv1 = nn.Sequential(
-            nn.Conv2d(in_channels, temp, kernel_size=3, stride=1, padding=1),   
-            nn.BatchNorm2d(out_channels),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(temp, out_channels, kernel_size=3, stride=1, padding=1),
-            nn.BatchNorm2d(out_channels),
-            nn.ReLU(inplace=True), 
-        )
-    def forward(self, x):
-     
-        return self.conv1(x)
-
 class Up(nn.Module):
     """Upscaling"""
 
@@ -47,7 +31,7 @@ class PFC(nn.Module):
     def __init__(self,channels, kernel_size=7):
         super(PFC, self).__init__()
         self.input_layer = nn.Sequential(
-                    nn.Conv2d(3, channels, 3, padding= 1),
+                    nn.Conv2d(3, channels, kernel_size=3, padding= 1),
                     nn.ReLU(inplace=True),
                     nn.BatchNorm2d(channels))
         self.depthwise = nn.Sequential(
