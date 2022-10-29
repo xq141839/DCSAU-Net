@@ -31,7 +31,8 @@ class PFC(nn.Module):
     def __init__(self,channels, kernel_size=7):
         super(PFC, self).__init__()
         self.input_layer = nn.Sequential(
-                    nn.Conv2d(3, channels, kernel_size=3, padding= 1),
+                    nn.Conv2d(3, channels, kernel_size, padding=  kernel_size // 2),
+                    #nn.Conv2d(3, channels, kernel_size=3, padding= 1),
                     nn.ReLU(inplace=True),
                     nn.BatchNorm2d(channels))
         self.depthwise = nn.Sequential(
