@@ -152,7 +152,6 @@ if __name__ == '__main__':
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=args.batch, shuffle=True,drop_last=True)
     val_loader = torch.utils.data.DataLoader(dataset=val_dataset, batch_size=args.batch//2,drop_last=True)
     
-    dataset_sizes = {'train':len(train_loader.dataset),'valid':len(train_loader.dataset)}
     dataloaders = {'train':train_loader,'valid':val_loader}
 
     model_ft = DCSAU_Net.Model(img_channels = 3, n_classes = 1)
