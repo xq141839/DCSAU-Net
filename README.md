@@ -6,7 +6,9 @@
 
 2022.10.05: The method of calculating FLOPs, parameters and FPS has been uploaded. 
 
-2022.12.09: A requirements.txt for Linux environment has been uploaded. 
+2022.12.09: A requirements.txt for Linux environment has been uploaded.
+
+2023.02.02: The article has been accepted and available in the journal: [Computers in Biology and Medicine](https://authors.elsevier.com/sd/article/S0010-4825(23)00091-4).
 ## Requirements
 1. pytorch==1.10.0
 2. pytorch-lightning==1.1.0
