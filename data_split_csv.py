@@ -29,7 +29,8 @@ def pre_csv(data_path,frac):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='data/', help='the path of dataset')
+    #parser.add_argument('--dataset', type=str, default='data/', help='the path of dataset')
+    parser.add_argument('--dataset', type=str, default='../datasets/DSB2018/image', help='the path of images') # issue 16
     parser.add_argument('--size', type=float, default=0.9, help='the size of your train set')
     args = parser.parse_args()
     os.makedirs('src/',exist_ok=True)
