@@ -126,7 +126,7 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=5):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', type=str,default='data/', help='the path of images')
-    parser.add_argument('--csvfile', type=str,default='src/train_data.csv', help='two columns [image_id,category(train/test)]')
+    parser.add_argument('--csvfile', type=str,default='src/test_train_data.csv', help='two columns [image_id,category(train/test)]')
     parser.add_argument('--loss', default='dice', help='loss type')
     parser.add_argument('--batch', type=int, default=16, help='batch size')
     parser.add_argument('--lr', type=float, default=0.001, help='learning rate')
@@ -137,6 +137,7 @@ if __name__ == '__main__':
     
 
     df = pd.read_csv(args.csvfile)
+    df = df[df.category=='train']
     gkf  = GroupKFold(n_splits = 5)
     df['fold'] = -1
     for fold, (train_idx, val_idx) in enumerate(gkf.split(df, groups = df.image_id.tolist())):
