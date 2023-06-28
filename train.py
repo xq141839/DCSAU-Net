@@ -138,6 +138,7 @@ if __name__ == '__main__':
 
     df = pd.read_csv(args.csvfile)
     df = df[df.category=='train']
+    df.reset_index(drop=True, inplace=True)
     gkf  = GroupKFold(n_splits = 5)
     df['fold'] = -1
     for fold, (train_idx, val_idx) in enumerate(gkf.split(df, groups = df.image_id.tolist())):
