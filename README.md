@@ -9,6 +9,8 @@
 2022.12.09: A requirements.txt for Linux environment has been uploaded.
 
 2023.02.02: The article has been accepted and available in the journal: [Computers in Biology and Medicine](https://authors.elsevier.com/sd/article/S0010-4825(23)00091-4).
+
+If you like our work, please :star2: :star2: :star2:. We highly appreciate your effort and time. :stuck_out_tongue_closed_eyes: :stuck_out_tongue_closed_eyes: :stuck_out_tongue_closed_eyes:
 ## Requirements
 1. pytorch==1.10.0
 2. pytorch-lightning==1.1.0
